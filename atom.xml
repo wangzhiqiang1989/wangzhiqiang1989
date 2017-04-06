@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>����֪�� | ˼����</title>
-  <subtitle>���ҹ�����֪ʶ������ʱ���������Ķ�������д����˼ά��ͼ��Wiz��TimeMeter</subtitle>
+  <title>起今知行 | 思考者</title>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
@@ -9,7 +9,7 @@
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>QJzhixing</name>
+    <name>John Doe</name>
     
   </author>
   
