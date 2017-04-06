@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-04-06T02:41:57.868Z</updated>
+  <updated>2017-01-06T09:50:23.970Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,221 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/04/06/%E6%95%B0%E6%8D%AE%E7%AE%A1%E9%81%93API/"/>
+    <id>http://yoursite.com/2017/04/06/数据管道API/</id>
+    <published>2017-04-06T06:35:27.496Z</published>
+    <updated>2017-01-06T09:50:23.970Z</updated>
+    
+    <content type="html"><![CDATA[<p>##需要特殊拼接json的对象参数说明<br>    private Integer    id;       唯一标识<br>    private Integer    apiId; 基础表信息id,新增可以不添加<br>    //参数名称<br>    private String    apiParaName;<br>    //参数数据类型  1常量 (11 整数 12 字符串 13 浮点数 14 日期 date 15 datetime 16长文本    (String))<br>      ==后面字段类型为备用不用===2变量 3 集合 4 虚拟集合  5 列表===<br>    private Byte    apiParaType;<br>    //参数值，可以是具体的值，也可以是描述性相关信息<br>    private String    apiParaVal;<br>    //参数是否是必须的 0 false  1 true<br>    private Byte    isMust;<br>    //是否是分页相关参数 0 false 1 true<br>    private Byte    isPaging;<br>    //参数的类型,定位是请求参数还是响应参数 1 request  2 response<br>    private Byte    fieldType;<br>    // 操作符  比如 大于 小于 等于 like 等等<br>    private String    operator;<br>    //如果是通过数据表封装的API，该字段接收的是数据库的类型,该字段不存储在数据库内<br>    // 仅是为了前端为了好进行传递字段而提供该字段<br>    public String    dbFieldType;</p>
+<p>[<br>    {<br>        “apiId”:50,<br>        “apiParaName”:”tradeName-update”,<br>        “apiParaType”:3,<br>        “apiParaVal”:”\”[zhangshan,lisi,wangwu,tianqi]\””,<br>        “fieldType”:2,<br>        “id”:5<br>    },<br>    {<br>        “apiParaName”:”name”,<br>        “apiParaType”:3,<br>        “apiParaVal”:”jusfoun”,<br>        “fieldType”:1,<br>        “id”:7<br>    }<br>]</p>
+<p>##API 添加</p>
+<p>###HTTP<br>    /plApi/insert</p>
+<p>###参数<br>    /**</p>
+<pre><code>* 新增方法，这里接口中并不是所有的页面都有，所以根据需要进行添加，没有传递null
+* @param plName    名称
+* @param resType    数据类型,类型有: 资源中心的自有数据(RES_TYPE_ZY_RES)-2101 
+                   融合平台自有(RES_TYPE_ZY_MERGE)-2102
+*                  商城平台-2201 融合平台(公开 RES_TYPE_MERGE)-2202 开放平台-2203
+*                  小九连环-2204  资源中心平台数据(RES_TYPE_PF_SOURCE)-2205 
+                    自有资源-21
+*                  (大类型 后台处理 21 自有资源 22 平台资源)
+* @param plDesc    描述信息
+* @param labelId    标签id
+* @param apiUrl    请求的URL
+* @param apiMethod    请求类型， 1 GET  2 POST
+* @param extractPath    数据抽取路径
+* @param returnFormat    响应数据类型 1 JSON 2 XML
+* @param reqSample        请求示例
+* @param isPaging        是否分页  0 否 1 分页
+* @param repSample        响应示例
+* @param sampleData    样例数据
+* @param paraJsonStr    请求或响应参数的json串封装，后台进行转型
+* @param labelName     标签的名称，使用逗号分隔
+* @param isTable       API是否发布于数据表 0 false 1 true
+* @param originApiId   源open API id标识   String 类型
+* @param apiType       API的类型  1 普通  2 通用 byte类型
+* @param useWay            // 使用方式 1 自用 2 公开
+* @return
+*/
+</code></pre><p>###请求方式<br>        POST</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据</p>
+<p>##API 修改</p>
+<p>###HTTP<br>    /plApi/update</p>
+<p>###参数<br>    /**</p>
+<pre><code>*  update
+* @param id            数据的唯一标识
+* @param plName    名称
+* @param resType    数据类型,类型有: 资源中心的自有数据-2101  融合平台自有-2102
+*                  商城平台-2201 融合平台公开数据-2202 开放平台-2203
+*                  小九连环-2204  资源中心平台数据-2205  自有资源-21
+*                  (大类型 后台处理 21 自有资源 22 平台资源)
+* @param plDesc    描述信息
+* @param labelId    标签id，使用逗号分隔
+* @param apiUrl    请求的URL
+* @param apiMethod    请求类型， 1 GET  2 POST
+* @param extractPath    数据抽取路径
+* @param returnFormat    响应数据类型 1 JSON 2 XML
+* @param reqSample        请求示例
+* @param isPaging        是否分页  0 否 1 分页
+* @param repSample        响应示例
+* @param sampleData    样例数据
+* @param paraJsonStr    请求或响应参数的json串封装，后台进行转型
+* @param delparaIds     移除的请求或响应参数的id，用逗号分隔
+* @param labelName     标签的名称，使用逗号分隔
+* @param isTable       API是否发布于数据表 0 false 1 true
+* @param sourceId  资源id，该字段在实体PlApi中sourceId字段
+* @param originApiId   源open API id标识
+* @param apiType       API的类型  1 普通  2 通用
+* @param useWay            // 使用方式 1 自用 2 公开
+* @return
+*/
+</code></pre><p>###请求方式<br>        POST</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据</p>
+<p>##API 删除</p>
+<p>###HTTP<br>    /plApi/delete</p>
+<p>###参数<br> String ids  删除的id列表，可以批量删除</p>
+<p>###请求方式<br>        POST</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据</p>
+<p>##API 根据id查询</p>
+<p>###HTTP<br>    /plApi/queryById</p>
+<p>###参数<br>    id    int </p>
+<p>###请求方式<br>        GET</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据<br>    <a href="http://192.168.20.229:8002/plApi/queryById?id=50" target="_blank" rel="external">http://192.168.20.229:8002/plApi/queryById?id=50</a><br>{</p>
+<pre><code>&quot;data&quot;: {
+    &quot;id&quot;: 50,
+    &quot;labelId&quot;: &quot;\&quot;1,2,3,5,6,7\&quot;&quot;,
+    &quot;apiUrl&quot;: &quot;\&quot;http://127.0.0.1:8900/trade/cc\&quot;&quot;,
+    &quot;apiMethod&quot;: 1,
+    &quot;jsonExtractPath&quot;: &quot;\&quot;/aa/bb/cc/dd\&quot;&quot;,
+    &quot;returnFormat&quot;: null,
+    &quot;requestSample&quot;: &quot;\&quot;{request sample-update}\&quot;&quot;,
+    &quot;isPaging&quot;: 1,
+    &quot;responseSample&quot;: &quot;\&quot;response sample-update\&quot;&quot;,
+    &quot;sampleData&quot;: null,
+    &quot;plBaseinfo&quot;: {
+        &quot;id&quot;: 50,
+        &quot;plName&quot;: &quot;trade API update&quot;,
+        &quot;plType&quot;: 7,
+        &quot;plBtype&quot;: 13,
+        &quot;plAddress&quot;: null,
+        &quot;createTime&quot;: &quot;2016-10-20 15:36:47.0&quot;,
+        &quot;createUid&quot;: &quot;U123&quot;,
+        &quot;updateUid&quot;: &quot;U456&quot;,
+        &quot;updateTime&quot;: 1476949007000,
+        &quot;resType&quot;: 21,
+        &quot;plDesc&quot;: null
+    },
+    &quot;apiParameters&quot;: [
+        {
+            &quot;id&quot;: 5,
+            &quot;apiId&quot;: 50,
+            &quot;apiParaName&quot;: &quot;tradeName&quot;,
+            &quot;apiParaType&quot;: 3,
+            &quot;apiParaVal&quot;: &quot;\&quot;[zhangshan,lisi,wangwu]\&quot;&quot;,
+            &quot;isMust&quot;: null,
+            &quot;isPaging&quot;: null,
+            &quot;fieldType&quot;: 2
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;apiId&quot;: 50,
+            &quot;apiParaName&quot;: &quot;name&quot;,
+            &quot;apiParaType&quot;: 3,
+            &quot;apiParaVal&quot;: &quot;jusfoun&quot;,
+            &quot;isMust&quot;: null,
+            &quot;isPaging&quot;: null,
+            &quot;fieldType&quot;: 1
+        }
+    ]
+},
+&quot;code&quot;: &quot;1&quot;,
+&quot;message&quot;: &quot;query success&quot;
+</code></pre><p>}</p>
+<p>##API 根据sourceId查询===========<strong><strong>*</strong></strong>=============</p>
+<p>###HTTP<br>    /plApi/queryBySourceId</p>
+<p>###参数<br>    sourceId    String </p>
+<p>###请求方式<br>        GET</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据<br>    <a href="http://192.168.1.92:8002/plApi/queryBySourceId?sourceId=100572371" target="_blank" rel="external">http://192.168.1.92:8002/plApi/queryBySourceId?sourceId=100572371</a></p>
+<p>##API 源API的id  根据originAPiId查询===========<strong><strong>*</strong></strong>=============</p>
+<p>###HTTP<br>    /plApi/queryByOriginApiId</p>
+<p>###参数<br>    originApiId     String </p>
+<p>###请求方式<br>        GET</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据</p>
+<p>##API 校验URL</p>
+<p>###HTTP<br>    /plApi/checkUrl</p>
+<p>###参数<br> url   string</p>
+<p>###请求方式<br>        GET</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据<br><a href="http://192.168.20.229:8002/plApi/checkUrl?url=https://www.baidu.com" target="_blank" rel="external">http://192.168.20.229:8002/plApi/checkUrl?url=https://www.baidu.com</a></p>
+<p>{</p>
+<pre><code>&quot;data&quot;: {
+    &quot;msg&quot;: &quot;[200]请求成功&quot;,
+    &quot;statusCode&quot;: 200
+},
+&quot;code&quot;: &quot;1&quot;,
+&quot;message&quot;: &quot;调用成功&quot;
+</code></pre><p>}</p>
+<p>##API 资源列表  API列表</p>
+<p>###HTTP<br>    /plApi/queryResourceApis</p>
+<p>###参数<br>pageNo int 页码<br>limit  int 每页显示记录数<br>说明：这里添加了分页参数，如果前期不再页面展示分页，可以将记录数显示的大些，比如1000</p>
+<p>###请求方式<br>        GET</p>
+<p>###返回数据 JSON<br>    return_format 1 json  2 xml  前期不允许移动XML格式的API，请提示</p>
+<p>###示例数据<br><a href="http://192.168.1.92:8002/plApi/queryResourceApis?pageNo=1&amp;limit=3" target="_blank" rel="external">http://192.168.1.92:8002/plApi/queryResourceApis?pageNo=1&amp;limit=3</a><br>{</p>
+<pre><code>&quot;data&quot;: {
+    &quot;datalist&quot;: [
+        {
+            &quot;sourceId&quot;: &quot;10011059478527&quot;,
+            &quot;plName&quot;: &quot;广东省海关广东分署海关注册备案情况和企业分类管理情况&quot;,
+            &quot;sourceName&quot;: &quot;广东省海关广东分署海关注册备案情况和企业分类管理情况&quot;,
+            &quot;return_format&quot;: 1,  
+            &quot;fileId&quot;: 1563
+        },
+        {
+            &quot;sourceId&quot;: &quot;10013208715263&quot;,
+            &quot;plName&quot;: &quot;海关进出口产品税则信息查询&quot;,
+            &quot;sourceName&quot;: &quot;海关进出口产品税则信息查询&quot;,
+            &quot;return_format&quot;: 1,
+            &quot;fileId&quot;: 1564
+        },
+        {
+            &quot;sourceId&quot;: &quot;1009839296511&quot;,
+            &quot;plName&quot;: &quot;广东省地税局非正常户认定信息&quot;,
+            &quot;sourceName&quot;: &quot;广东省地税局非正常户认定信息&quot;,
+            &quot;return_format&quot;: 1,
+            &quot;fileId&quot;: 1565
+        }
+    ],
+    &quot;count&quot;: 394,
+    &quot;pageSize&quot;: 3
+},
+&quot;code&quot;: &quot;1&quot;,
+&quot;message&quot;: &quot;调用成功&quot;
+</code></pre><p>}</p>
+<p>##API 资源列表  API列表</p>
+<p>###HTTP<br>    /plApi/uploadApiFile</p>
+<p>###参数<br>    uploadFile    file文件<br>    uploadType    文件类型 1 request  2 response</p>
+<p>###请求方式<br>        GET</p>
+<p>###返回数据 JSON</p>
+<p>###示例数据<br><a href="http://192.168.1.92:8002/plApi/uploadApiFile" target="_blank" rel="external">http://192.168.1.92:8002/plApi/uploadApiFile</a><br>{<br>    “data”: [<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “head1”,<br>            “apiParaType”: 11,<br>            “apiParaVal”: “head1”,<br>            “isMust”: 1,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        },<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “head2”,<br>            “apiParaType”: 12,<br>            “apiParaVal”: “head2”,<br>            “isMust”: 0,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        },<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “head3”,<br>            “apiParaType”: 11,<br>            “apiParaVal”: “head3”,<br>            “isMust”: 0,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        },<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “ids”,<br>            “apiParaType”: 11,<br>            “apiParaVal”: “10”,<br>            “isMust”: 0,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        }<br>    ],<br>    “code”: “1”,<br>    “message”: “调用成功”<br>}</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##需要特殊拼接json的对象参数说明&lt;br&gt;    private Integer    id;       唯一标识&lt;br&gt;    private Integer    apiId; 基础表信息id,新增可以不添加&lt;br&gt;    //参数名称&lt;br&gt;    privat
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title></title>

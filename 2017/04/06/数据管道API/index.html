@@ -76,6 +76,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="起今知行 | 思考者" type="application/atom+xml" />
 
@@ -89,15 +91,16 @@
 
 
 
-<meta name="description" content="知识管理，时间管理，自我管理">
-<meta property="og:type" content="website">
+<meta name="description" content="##需要特殊拼接json的对象参数说明    private Integer    id;       唯一标识    private Integer    apiId; 基础表信息id,新增可以不添加    //参数名称    private String    apiParaName;    //参数数据类型  1常量 (11 整数 12 字符串 13 浮点数 14 日期 date 15 da">
+<meta property="og:type" content="article">
 <meta property="og:title" content="起今知行 | 思考者">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/04/06/数据管道API/index.html">
 <meta property="og:site_name" content="起今知行 | 思考者">
-<meta property="og:description" content="知识管理，时间管理，自我管理">
+<meta property="og:description" content="##需要特殊拼接json的对象参数说明    private Integer    id;       唯一标识    private Integer    apiId; 基础表信息id,新增可以不添加    //参数名称    private String    apiParaName;    //参数数据类型  1常量 (11 整数 12 字符串 13 浮点数 14 日期 date 15 da">
+<meta property="og:updated_time" content="2017-01-06T09:50:23.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="起今知行 | 思考者">
-<meta name="twitter:description" content="知识管理，时间管理，自我管理">
+<meta name="twitter:description" content="##需要特殊拼接json的对象参数说明    private Integer    id;       唯一标识    private Integer    apiId; 基础表信息id,新增可以不添加    //参数名称    private String    apiParaName;    //参数数据类型  1常量 (11 整数 12 字符串 13 浮点数 14 日期 date 15 da">
 
 
 
@@ -125,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/06/数据管道API/"/>
 
 
 
 
 
-  <title> 起今知行 | 思考者 </title>
+  <title>  | 起今知行 | 思考者 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -156,9 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,9 +242,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -274,9 +275,6 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/06/数据管道API/" itemprop="url">
-                  Untitled
-                </a>
               
             
           </h1>
@@ -327,9 +325,7 @@
       
 
       
-        
-          
-            <p>##需要特殊拼接json的对象参数说明<br>    private Integer    id;       唯一标识<br>    private Integer    apiId; 基础表信息id,新增可以不添加<br>    //参数名称<br>    private String    apiParaName;<br>    //参数数据类型  1常量 (11 整数 12 字符串 13 浮点数 14 日期 date 15 datetime 16长文本    (String))<br>      ==后面字段类型为备用不用===2变量 3 集合 4 虚拟集合  5 列表===<br>    private Byte    apiParaType;<br>    //参数值，可以是具体的值，也可以是描述性相关信息<br>    private String    apiParaVal;<br>    //参数是否是必须的 0 false  1 true<br>    private Byte    isMust;<br>    //是否是分页相关参数 0 false 1 true<br>    private Byte    isPaging;<br>    //参数的类型,定位是请求参数还是响应参数 1 request  2 response<br>    private Byte    fieldType;<br>    // 操作符  比如 大于 小于 等于 like 等等<br>    private String    operator;<br>    //如果是通过数据表封装的API，该字段接收的是数据库的类型,该字段不存储在数据库内<br>    // 仅是为了前端为了好进行传递字段而提供该字段<br>    public String    dbFieldType;</p>
+        <p>##需要特殊拼接json的对象参数说明<br>    private Integer    id;       唯一标识<br>    private Integer    apiId; 基础表信息id,新增可以不添加<br>    //参数名称<br>    private String    apiParaName;<br>    //参数数据类型  1常量 (11 整数 12 字符串 13 浮点数 14 日期 date 15 datetime 16长文本    (String))<br>      ==后面字段类型为备用不用===2变量 3 集合 4 虚拟集合  5 列表===<br>    private Byte    apiParaType;<br>    //参数值，可以是具体的值，也可以是描述性相关信息<br>    private String    apiParaVal;<br>    //参数是否是必须的 0 false  1 true<br>    private Byte    isMust;<br>    //是否是分页相关参数 0 false 1 true<br>    private Byte    isPaging;<br>    //参数的类型,定位是请求参数还是响应参数 1 request  2 response<br>    private Byte    fieldType;<br>    // 操作符  比如 大于 小于 等于 like 等等<br>    private String    operator;<br>    //如果是通过数据表封装的API，该字段接收的是数据库的类型,该字段不存储在数据库内<br>    // 仅是为了前端为了好进行传递字段而提供该字段<br>    public String    dbFieldType;</p>
 <p>[<br>    {<br>        “apiId”:50,<br>        “apiParaName”:”tradeName-update”,<br>        “apiParaType”:3,<br>        “apiParaVal”:”\”[zhangshan,lisi,wangwu,tianqi]\””,<br>        “fieldType”:2,<br>        “id”:5<br>    },<br>    {<br>        “apiParaName”:”name”,<br>        “apiParaType”:3,<br>        “apiParaVal”:”jusfoun”,<br>        “fieldType”:1,<br>        “id”:7<br>    }<br>]</p>
 <p>##API 添加</p>
 <p>###HTTP<br>    /plApi/insert</p>
@@ -527,20 +523,27 @@
 <p>###返回数据 JSON</p>
 <p>###示例数据<br><a href="http://192.168.1.92:8002/plApi/uploadApiFile" target="_blank" rel="external">http://192.168.1.92:8002/plApi/uploadApiFile</a><br>{<br>    “data”: [<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “head1”,<br>            “apiParaType”: 11,<br>            “apiParaVal”: “head1”,<br>            “isMust”: 1,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        },<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “head2”,<br>            “apiParaType”: 12,<br>            “apiParaVal”: “head2”,<br>            “isMust”: 0,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        },<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “head3”,<br>            “apiParaType”: 11,<br>            “apiParaVal”: “head3”,<br>            “isMust”: 0,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        },<br>        {<br>            “id”: null,<br>            “apiId”: null,<br>            “apiParaName”: “ids”,<br>            “apiParaType”: 11,<br>            “apiParaVal”: “10”,<br>            “isMust”: 0,<br>            “isPaging”: null,<br>            “fieldType”: 1<br>        }<br>    ],<br>    “code”: “1”,<br>    “message”: “调用成功”<br>}</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -548,271 +551,38 @@
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/Hello/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王志强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="起今知行 | 思考者">
-    </span>
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/04/01/Hello/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/04/01/Hello/" itemprop="url">
-                  Untitled
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-01T18:57:59+08:00">
-                2017-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>blog目录</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王志强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="起今知行 | 思考者">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/01/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-01T18:55:28+08:00">
-                2017-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -820,6 +590,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -998,6 +772,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
